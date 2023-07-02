@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import SearchForm from "../../Components/Search";
 import ArtworkList from "../../Components/ArtworkList";
 import {
@@ -44,7 +43,7 @@ const App: React.FC = () => {
 
   return (
     <AppContainer>
-      <AppTitle>Obras de Arte do Museu Metropolitano de Arte</AppTitle>
+      <AppTitle>Museu Metropolitano de Arte</AppTitle>
       <SearchForm onSearch={handleSearch} />
       <ArtworkList
         artworks={searchResults}

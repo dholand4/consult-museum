@@ -2,7 +2,7 @@ import React from "react";
 import { SearchResult } from "../../Services/api";
 
 import ArtworkItem from "../ArtworkItem/index";
-import { ArtworkListContainer, LoadMoreButton } from "./styles";
+import { ArtworkListContainer } from "./styles";
 
 interface ArtworkListProps {
   artworks: SearchResult[];

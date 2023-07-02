@@ -53,7 +53,7 @@ export async function searchObjectsByKeyword(
 
     const objectIDs = response.data.objectIDs;
     if (objectIDs) {
-      const limitedObjectIDs = objectIDs.slice(0, 12);
+      const limitedObjectIDs = objectIDs.slice(0, 20);
       const objectPromises = limitedObjectIDs.map((objectID) =>
         getObjectDetails(objectID)
       );
@@ -76,7 +76,27 @@ export async function getObjectDetails(
     const response: AxiosResponse<ObjectDetails> = await axios.get(
       `${BASE_URL}/objects/${objectId}`
     );
-    return response.data;
+
+    const titleWords = response.data.title.split(" "); // Divide o título em palavras
+    let truncatedTitle = "";
+
+    for (let i = 0; i < 3 && i < titleWords.length; i++) {
+      if (titleWords[i].includes("(")) {
+        // Se uma das duas primeiras palavras contém um parêntese aberto "(",
+        // não adiciona ao título truncado
+        break;
+      }
+      truncatedTitle += titleWords[i] + " ";
+    }
+
+    truncatedTitle = truncatedTitle.trim(); // Remove espaços em branco no início e no final
+
+    const modifiedData: ObjectDetails = {
+      ...response.data,
+      title: truncatedTitle,
+    };
+
+    return modifiedData;
   } catch (error) {
     return handleRequestError(error as AxiosError<unknown>);
   }

@@ -10,17 +10,3 @@ export const ArtworkListContainer = styled.div`
     grid-gap: 10px;
   }
 `;
-export const LoadMoreButton = styled.button`
-  padding: 8px 16px;
-  font-size: 14px;
-  border-radius: 4px;
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #0056b3;
-  }
-`;

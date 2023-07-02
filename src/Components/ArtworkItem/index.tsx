@@ -1,13 +1,17 @@
 import React from "react";
 import { SearchResult } from "../../Services/api";
 import {
+  Artist,
+  ArtworkArtist,
   ArtworkImage,
   ArtworkItemContainer,
-  ArtworkText,
-  ArtworkText1,
   ArtworkTitle,
   FavoriteButton,
   ImagePlaceholder,
+  EmptyMessage,
+  ArtworkPublic,
+  ArtworkLine,
+  Line,
 } from "./styles";
 
 export interface ArtworkItemProps {
@@ -40,12 +44,21 @@ const ArtworkItem: React.FC<ArtworkItemProps> = ({
       ) : (
         <ImagePlaceholder>Imagem não disponível</ImagePlaceholder>
       )}
-      <ArtworkTitle>Titulo: {title}</ArtworkTitle>
-      <ArtworkText1>Artista: {artistDisplayName}</ArtworkText1>
-      <ArtworkText>Localização: {creditLine}</ArtworkText>
-      <ArtworkText>
+      <ArtworkTitle>{title}</ArtworkTitle>
+      <ArtworkArtist>
+        Artista:
+        {artistDisplayName ? (
+          <Artist>{artistDisplayName}</Artist>
+        ) : (
+          <EmptyMessage>Desconhecido</EmptyMessage>
+        )}
+      </ArtworkArtist>
+      <ArtworkLine>
+        Localização: <Line>{creditLine}</Line>
+      </ArtworkLine>
+      <ArtworkPublic>
         {artwork.publicDomain ? "Domínio Público" : "Não é de Domínio Público"}
-      </ArtworkText>
+      </ArtworkPublic>
 
       <FavoriteButton
         onClick={isFavorite ? handleUnfavorite : handleFavorite}
