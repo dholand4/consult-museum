@@ -29,6 +29,7 @@ O projeto foi feito utilizando das seguintes tecnologias
 - React
 - Styled-Components
 - Typescript
+- Axios
 
 ---
 
