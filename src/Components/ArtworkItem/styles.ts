@@ -49,8 +49,9 @@ export const ImagePlaceholder = styled.div`
 
 export const ArtworkTitle = styled.h3`
   font-size: 14.5px;
-  margin: 0 auto 20px;
+  margin: 0 auto;
   text-align: center;
+  height: 35px;
 
   ${media.mobile} {
     font-size: 10px;
@@ -94,9 +95,9 @@ export const ArtworkLine = styled.p`
 
 export const Line = styled.p`
   font-size: 15px;
-  text-align: justify;
+  /* text-align: justify; */
   margin: 0;
-  height: 100px;
+  height: 120px;
 
   ${media.mobile} {
     height: 100px;
@@ -141,7 +142,7 @@ export const EmptyMessage = styled.p`
   text-align: left;
   margin: 0;
   color: #000;
-  height: 40px;
+  height: 50px;
 
   ${media.mobile} {
     font-size: 12px;
