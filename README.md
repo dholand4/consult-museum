@@ -10,7 +10,7 @@
 
 ## 🤔 Sobre
 
-Projeto **Consult Museum** foi desenvolvido para consulta a obras de arte do Museu Metropolitano de Arte.
+Projeto **Consult Museum** foi desenvolvido para consulta a obras de arte do Museu Metropolitano de Arte utilizando a API do Museu.
 
 ---
 
